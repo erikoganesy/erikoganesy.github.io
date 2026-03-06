@@ -1,10 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Session 13</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        code {
+            background: #eee;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 6px;
+        }
+
+        .task {
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This is my GitHub Pages website.</p>
+
+<div class="container">
+
+<h1>SQL Session 13</h1>
+<p>Advanced SQL queries and exercises.</p>
+
+<div class="task">
+<h2>Example 1</h2>
+<p>Find users whose salary is above the average salary.</p>
+
+<pre>
+SELECT name
+FROM users
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM users
+);
+</pre>
+</div>
+
+<div class="task">
+<h2>Example 2</h2>
+<p>Select distinct countries from the table.</p>
+
+<pre>
+SELECT DISTINCT country
+FROM users;
+</pre>
+</div>
+
+<div class="task">
+<h2>Example 3</h2>
+<p>Find top 10 users by followers.</p>
+
+<pre>
+SELECT user_id, followers_count
+FROM users
+ORDER BY followers_count DESC
+LIMIT 10;
+</pre>
+</div>
+
+</div>
+
 </body>
 </html>
